@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def uppercase(str):
     end = ""
     length = 1
