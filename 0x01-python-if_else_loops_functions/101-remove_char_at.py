@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def remove_char_at(str, n):
     """This is a function to remove a character from string
     and printing the copy like the "C array index"
