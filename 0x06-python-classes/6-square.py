@@ -68,6 +68,17 @@ class Square():
     def position(self, value):
         """Sets the position for the square to be printed
         """
+        # validating position instance attribute
+        if type(value) != tuple or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        for item in value:
+            try:
+                if type(item) != int or item < 0:
+                    raise TypeError("position must be a tuple of 2"
+                                    "positive integers")
+            except Exception:
+                raise TypeError("position must be a tuple of 2"
+                                "positive integers")
         self.__position = value
 
     def area(self):
