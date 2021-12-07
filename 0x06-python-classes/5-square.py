@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 
 """This module contains a class - Square
 This is based on "4-square" but now prints the square
@@ -57,5 +56,5 @@ class Square():
         else:
             for i in range(self.__size):
                 for j in range(self.__size):
-                    print("#", end="", file=sys.stdout)
+                    print("#", end="")
                 print()
