@@ -60,10 +60,14 @@ class Square():
 
     @property
     def position(self):
+        """Gets the position for the square to be printed
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Sets the position for the square to be printed
+        """
         self.__position = value
 
     def area(self):
