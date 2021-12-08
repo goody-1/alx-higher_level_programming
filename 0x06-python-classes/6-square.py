@@ -33,10 +33,10 @@ class Square():
         for item in position:
             try:
                 if type(item) != int or item < 0:
-                    raise TypeError("position must be a tuple of 2"
+                    raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:
-                raise TypeError("position must be a tuple of 2"
+                raise TypeError("position must be a tuple of 2 "
                                 "positive integers")
 
         self.__position = position
@@ -74,10 +74,10 @@ class Square():
         for item in value:
             try:
                 if type(item) != int or item < 0:
-                    raise TypeError("position must be a tuple of 2"
+                    raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:
-                raise TypeError("position must be a tuple of 2"
+                raise TypeError("position must be a tuple of 2 "
                                 "positive integers")
         self.__position = value
 
