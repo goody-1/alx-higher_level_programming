@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""This module contains a class to be conformed to a given python bytecode
+"""
 import math
 
 
