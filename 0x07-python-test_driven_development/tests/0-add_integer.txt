@@ -1,0 +1,83 @@
+Using ``add_integer``
+
+->	add_integer(a, b=89)
+------------------------------
+
+Parameter 'b' is defaulted to 89
+Parameters can be of int of float but floats are converted to integers
+
+------------------------------
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Usage:
+
+	Basic usage:
+		>>> add_integer(24, 68)
+		92
+
+	One Parameter:
+		>>> add_integer(-40)
+		58
+
+	Negative inputs:
+		>>> add_integer(-20, -60)
+		-80
+
+	Floats:
+		>>> add_integer(203.43, 10.2)
+		213
+
+	Float NaN:
+		>>> add_integer(float('NaN'))
+		Traceback (most recent call last):
+		...
+		ValueError: cannot convert float NaN to integer
+
+	No input:
+		>>> add_integer(None)
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+	String input:
+		>>> add_integer("School", 78)
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+		>>> add_integer(4, "78")
+		Traceback (most recent call last):
+		...
+		TypeError: b must be an integer
+
+		>>> add_integer("Hello", "Alx")
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+	Other input types:
+		>>> add_integer([4, 6, 7], 7)
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+		>>> add_integer(True, False)
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+		>>> add_integer(68, False)
+		Traceback (most recent call last):
+		...
+		TypeError: b must be an integer
+
+		>>> add_integer({65, 78}, -4)
+		Traceback (most recent call last):
+		...
+		TypeError: a must be an integer
+
+		>>> add_integer(78, {"first": 1, "second": 4})
+		Traceback (most recent call last):
+		...
+		TypeError: b must be an integer

@@ -1,0 +1,6 @@
+import os, sys
+sys.path.append(os.path.join(os.path.dirname(
+	sys.path[0]), '0x07-python-test_driven_development'))
+__import__('0-add_integer').add_integer
+
+
