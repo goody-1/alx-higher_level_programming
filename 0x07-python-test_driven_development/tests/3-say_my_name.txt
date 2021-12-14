@@ -1,0 +1,35 @@
+Using ``say_my_name``
+
+->	say_my_name(first_name, last_name="")
+-----------------------------------------------------
+
+Parameters 'first_name' and 'last_name' are strings and must only be so
+Parameter 'last_name' is optional, defaulted to an empty string
+
+-----------------------------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Usage:
+
+	Basic usage:
+		>>> say_my_name("David", "Duke")
+		'My name is David Duke'
+		>>> say_my_name("Gabe")
+		'My name is Gabe '
+
+	TypeErrors:
+		>>> say_my_name(12, "Blue")
+		Traceback (most recent call last):
+		...
+		TypeError: first_name must be a string
+
+		>>> say_my_name("Flip", True)
+		Traceback (most recent call last):
+		...
+		TypeError: last_name must be a string
+
+		>>> say_my_name(["Gideon"], "Golfman")
+		Traceback (most recent call last):
+		...
+		TypeError: first_name must be a string

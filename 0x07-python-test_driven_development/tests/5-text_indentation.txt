@@ -1,0 +1,64 @@
+Using ``text_indentation``
+
+->	text_indentation(text)
+-----------------------------------------------------
+
+Parameters 'text' must be string and string only (str)
+
+-----------------------------------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Usage:
+
+	Basic usage:
+		>>> text = "Lorem ipsum, doren kurus jenen \
+		... confirmed. Turus, bele? \
+		... :ibum carum"
+		>>> text_indentation(text)
+		Lorem ipsum, doren kurus jenen confirmed.
+		<BLANKLINE>
+		Turus, bele?
+		<BLANKLINE>
+		:
+		<BLANKLINE>
+		ibum carum
+
+	Other usage:
+		>>> text = ". Carum basit, dupeen free male ?\
+		... Juban femon delo : bratsen dijil: .. \n\
+		...	praise jojum\ .90 jubile:"
+		>>> text_indentation(text)
+		.
+		<BLANKLINE>
+		Carum basit, dupeen free male ?
+		<BLANKLINE>
+		Juban femon delo :
+		<BLANKLINE>
+		bratsen dijil:
+		<BLANKLINE>
+		.
+		<BLANKLINE>
+		.
+		<BLANKLINE>
+		<BLANKLINE>
+		    praise jojum\ .
+		<BLANKLINE>
+		90 jubile:
+		<BLANKLINE>
+
+	TypeErrors:
+		>>> text_indentation(9)
+		Traceback (most recent call last):
+		...
+		TypeError: text must be a string
+
+		>>> text_indentation(True)
+		Traceback (most recent call last):
+		...
+		TypeError: text must be a string
+
+		>>> text_indentation(["Gideon", "Golfman"])
+		Traceback (most recent call last):
+		...
+		TypeError: text must be a string

@@ -1,0 +1,38 @@
+Using ``print_square``
+
+->	print_square(size))
+-----------------------------------------------------
+
+Parameters size is the size length of the square
+
+-----------------------------------------------------
+
+>>> print_square = __import__('4-print_square').print_square
+
+Usage:
+
+	Basic usage:
+		>>> print_square(2)
+		##
+		##
+		>>> print_square(1)
+		#
+
+	ValueErrors:
+		>>> print_square(-1)
+		Traceback (most recent call last):
+		...
+		ValueError: size must be >= 0
+
+	TypeErrors:
+		>>> print_square("four")
+		Traceback (most recent call last):
+		...
+		TypeError: size must be an integer
+
+		>>> type_list = ["Three", True, 8.9, 2.0, [3, 5, 6], float('NaN')]
+		>>> for item in type_list:
+		...		print_square(item)
+		Traceback (most recent call last):
+		...
+		TypeError: size must be an integer
