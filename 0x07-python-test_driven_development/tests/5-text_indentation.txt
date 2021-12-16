@@ -47,7 +47,8 @@ Usage:
 		90 jubile:
 		<BLANKLINE>
 
-		>>> text_indentation()
+		>>> text_indentation("")
+
 
 	TypeErrors:
 		>>> text_indentation(9)
@@ -61,6 +62,11 @@ Usage:
 		TypeError: text must be a string
 
 		>>> text_indentation(["Gideon", "Golfman"])
+		Traceback (most recent call last):
+		...
+		TypeError: text must be a string
+
+		>>> text_indentation(None)
 		Traceback (most recent call last):
 		...
 		TypeError: text must be a string
