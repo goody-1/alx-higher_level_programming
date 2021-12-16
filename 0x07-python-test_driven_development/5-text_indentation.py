@@ -67,7 +67,7 @@ def text_indentation(text=""):
     Args:
         text - the text
     """
-    if type(text) != str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
     period_split = text.split('.')
