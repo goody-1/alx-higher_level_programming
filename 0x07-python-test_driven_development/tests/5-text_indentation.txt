@@ -47,6 +47,8 @@ Usage:
 		90 jubile:
 		<BLANKLINE>
 
+		>>> text_indentation()
+
 	TypeErrors:
 		>>> text_indentation(9)
 		Traceback (most recent call last):
