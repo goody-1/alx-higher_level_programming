@@ -34,6 +34,9 @@ Usage:
 		...
 		ValueError: cannot convert float NaN to integer
 
+		>>> add_integer(float("inf"), float("inf"))
+		89
+
 	No input:
 		>>> add_integer(None)
 		Traceback (most recent call last):
