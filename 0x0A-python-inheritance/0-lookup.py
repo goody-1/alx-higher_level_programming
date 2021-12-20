@@ -17,4 +17,4 @@ def lookup(obj):
         obj -> object whose attributes and methods are to be returned
     """
 
-    return [key for key in obj.__dict__]
+    return dir(obj)
