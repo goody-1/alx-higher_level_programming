@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 """
 contains function that reads utf-8 file
 """
