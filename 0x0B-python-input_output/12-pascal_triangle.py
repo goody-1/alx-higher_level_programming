@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""Contains function for pascal's triangle"""
+
 def pascal_triangle(n):
     """Returns a pascal triangle of n size"""
     pt = []
