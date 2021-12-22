@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import sys
+import io
 
 dictstatus = {}
 totalsize = 0
