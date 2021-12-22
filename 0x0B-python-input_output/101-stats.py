@@ -34,7 +34,7 @@ for line in sys.stdin:
     count += 1
     if count == 10:
         sortme = sorted(status_dict.keys())
-        print("File size:", status_dict)
+        print("File size:", total_size)
         for keys in sortme:
             print("{}: {}".format(keys, status_dict[keys]))
         count = 0
