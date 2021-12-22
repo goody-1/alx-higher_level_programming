@@ -17,25 +17,38 @@ script that reads stdin line by line and computes metrics:
             -   format: <status code>: <number>
             -   status codes should be printed in ascending order
 """
-import sys
+if __name__ == '__main__':
 
-status_dict = {}
-total_size = 0
-count = 0
+    import sys
 
-for line in sys.stdin:
-    split = line.split()
-    status = split[-2]
-    total_size += int(split[-1])
-    if status in status_dict.keys():
-        status_dict[status] += 1
-    else:
-        status_dict[status] = 1
-    count += 1
-    if count == 10:
-        sortme = sorted(status_dict.keys())
-        print("File size:", total_size)
-        for keys in sortme:
-            print("{}: {}".format(keys, status_dict[keys]))
-        count = 0
-        continue
+    file_size = 0
+    valid_codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    stats = {k: 0 for k in valid_codes}
+    counter = 0
+
+    def print_stats(stats: dict, file_size: int) -> None:
+        print("File size: {:d}".format(file_size))
+        for k, v in sorted(stats.items()):
+            if v:
+                print("{}: {}".format(k, v))
+
+    try:
+        for line in sys.stdin:
+            counter += 1
+            data = line.split()
+            try:
+                status_code = data[-2]
+                if status_code in stats:
+                    stats[status_code] += 1
+            except BaseException:
+                pass
+            try:
+                file_size += int(data[-1])
+            except BaseException:
+                pass
+            if counter % 10 == 0:
+                print_stats(stats, file_size)
+        print_stats(stats, file_size)
+    except KeyboardInterrupt:
+        print_stats(stats, file_size)
+        raise
