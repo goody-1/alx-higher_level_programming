@@ -97,5 +97,24 @@ class Rectangle(Base):
     def display(self):
         """Display the rectangle
         """
+        for row in range(self.y):
+            print()
         for row in range(self.__height):
             print("{}{}".format(" " * self.x, "#" * self.width))
+
+    def update(self, *args, **kwargs):
+        """update attributes"""
+        if args:
+            listme = ['id', 'width', 'height', 'x', 'y']
+            i = 0
+            for arg in args:
+                setattr(self, listme[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def __str__(self):
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
