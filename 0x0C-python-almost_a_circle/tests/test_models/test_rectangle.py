@@ -32,7 +32,7 @@ class TestRectangleDocs(unittest.TestCase):
     def test_func_docstrings(self):
         """Tests for the presence of docstrings in all functions"""
         for func in self.rect_funcs:
-            self.assertTrue(len(func[1].__doc__) >= 1)
+            self.assertTrue(len(func.__doc__) >= 1)
 
 
 class TestRectangle(unittest.TestCase):
@@ -236,12 +236,6 @@ class TestRectangle(unittest.TestCase):
             r.update(1, 1, 1, -1)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r.update(1, 1, 1, 1, -1)
-
-    def test_update_too_many_args(self):
-        """test too many args for update"""
-        r = Rectangle(1, 1, 0, 0, 1)
-        r.update(1, 1, 1, 1, 1, 2)
-        self.assertEqual(str(r), "[Rectangle] (1) 1/1 - 1/1")
 
     def test_update_no_args(self):
         """test no args for update"""
