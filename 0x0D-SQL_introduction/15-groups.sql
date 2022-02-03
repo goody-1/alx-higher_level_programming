@@ -5,7 +5,7 @@
 -- The list should be sorted by the number of records (descending)
 
 
-  SELECT score, COUNT(1) as 'number'
+  SELECT score, COUNT(*) as 'number'
     FROM second_table
 GROUP BY score
 ORDER BY 'number' DESC;
