@@ -5,7 +5,6 @@
 --	Results must be sorted in descending order by the number of shows linked
 --	only one SELECT statement
 
-
     SELECT tv_genres.name AS genre, COUNT(*) AS number_shows
   	  FROM tv_genres
 INNER JOIN tv_show_genres
