@@ -1,4 +1,4 @@
-def magic_calculation(a, b, c):
+def magic_calculation(a, b):
     from magic_calculation_102 import add, sub
     """magic calculation 3 for bytecode"""
     if (a < b):
