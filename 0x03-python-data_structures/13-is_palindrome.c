@@ -9,21 +9,19 @@
  */
 int is_palindrome(listint_t **head)
 {
-	if (*head == NULL)
-		return (0);
-
 	size_t len = list_len(*head);
 	char *str1, *str2;
 	size_t mid = len / 2, i;
 	int odd = len % 2;
 
-	if (len == 0)
+	if (len == 0 || *head == NULL)
 		return (1);
-	if (odd)
-		len--;
+
 	str1 = malloc(sizeof(char) * mid + 1);
 	str2 = malloc(sizeof(char) * mid + 1);
 
+	if (odd)
+		len--;
 	for (i = 0; i < len; i++)
 	{
 		if (i < mid)
