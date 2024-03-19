@@ -25,6 +25,7 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 size_t list_len(const listint_t *h);
-void rev_string(char *s);
+void rev_array(int *arr, int len);
+int compare_arrays(int *arr1, int *arr2, size_t len);
 
 #endif /* LISTS_H */

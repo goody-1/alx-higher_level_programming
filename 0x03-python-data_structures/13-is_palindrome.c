@@ -10,43 +10,66 @@
 int is_palindrome(listint_t **head)
 {
 	size_t len = list_len(*head);
-	char *str1, *str2;
-	size_t mid = len / 2, i;
-	int odd = len % 2;
+	int *arr1, *arr2, odd = len % 2;
+	size_t mid = len / 2, i, j, loop_len;
 
 	if (len == 0 || *head == NULL)
 		return (1);
+	arr1 = malloc(sizeof(int) * mid + 1);
+	arr2 = malloc(sizeof(int) * mid + 1);
 
-	str1 = malloc(sizeof(char) * mid + 1);
-	str2 = malloc(sizeof(char) * mid + 1);
+	if (arr1 == NULL || arr2 == NULL)
+		return (0);
 
-	if (odd)
-		len--;
-	for (i = 0; i < len; i++)
+	loop_len = odd ? len - 1 : len;
+	for (i = 0; i < loop_len; i++)
 	{
 		if (i < mid)
-			str1[i] = (*head)->n;
+			arr1[i] = (*head)->n;
 		else
 		{
 			if (odd && i == mid)
 				*head = (*head)->next;
-			str2[i - mid] = (*head)->n;
+			j = i - mid;
+			arr2[j] = (*head)->n;
 		}
 		*head = (*head)->next;
 	}
-	rev_string(str2);
-	if (strcmp(str1, str2) == 0)
+
+	rev_array(arr2, mid - 1);
+	if (compare_arrays(arr1, arr2, mid) == 1)
 	{
-		free(str1);
-		free(str2);
+		free(arr1);
+		free(arr2);
 		return (1);
 	}
 	else
 	{
-		free(str1);
-		free(str2);
+		free(arr1);
+		free(arr2);
 		return (0);
 	}
+}
+
+/**
+ * compare_arrays - compares two arrays
+ *
+ * @arr1: pointer to first array
+ * @arr2: pointer to second array
+ * @len: length of arrays
+ *
+ * Return: 1 if arrays are equal, 0 otherwise
+*/
+int compare_arrays(int *arr1, int *arr2, size_t len)
+{
+	size_t i;
+
+	for (i = 0; i < len; i++)
+	{
+		if (arr1[i] != arr2[i])
+			return (0);
+	}
+	return (1);
 }
 
 /**
@@ -68,24 +91,20 @@ size_t list_len(const listint_t *h)
 }
 
 /**
-* rev_string -  reverses a string
-* @s: pointer
+* rev_array -  reverses an array of integers
+* @arr: pointer
+* @len: length of array
 * Return: void
 */
-void rev_string(char *s)
+void rev_array(int *arr, int len)
 {
-	int i = 0, len = 0;
-	char temp;
+	int i = 0, temp;
 
-	while (s[len] != '\0')
-		len++;
-	len--;
-
-	while (i <= len)
+	while (i < len)
 	{
-		temp = s[i];
-		s[i] = s[len];
-		s[len] = temp;
+		temp = arr[i];
+		arr[i] = arr[len];
+		arr[len] = temp;
 		i++;
 		len--;
 	}
