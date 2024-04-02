@@ -14,7 +14,7 @@ class Node():
         """Initialize class object
         """
         # validating data attribute
-        if type(data) != int:
+        if not isinstance(data, int):
             raise TypeError("data must be an integer")
         self.__data = data
 
@@ -34,7 +34,7 @@ class Node():
     def data(self, value):
         """Sets the data attribute with 'value'
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("data must be integer")
 
         self.__data = value
@@ -71,7 +71,8 @@ class SinglyLinkedList():
     def printList(self):
         data_list = []
         temp = self.__head
-        while(temp):
+
+        while (temp):
             data_list.append(temp.data)
             temp = temp.next_node
         return sorted(data_list)

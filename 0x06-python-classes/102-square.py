@@ -17,10 +17,14 @@ class Square():
         __str__(self): Returns a string representation of the square.
         __eq__(self, other): Checks if the square is equal to another square.
         __lt__(self, other): Checks if the square is less than another square.
-        __le__(self, other): Checks if the square is less than or equal to another square.
-        __gt__(self, other): Checks if the square is greater than another square.
-        __ge__(self, other): Checks if the square is greater than or equal to another square.
-        __ne__(self, other): Checks if the square is not equal to another square.
+        __le__(self, other): Checks if the square is less than or equal to
+            another square.
+        __gt__(self, other): Checks if the square is greater than
+            another square.
+        __ge__(self, other): Checks if the square is greater than or equal to
+            another square.
+        __ne__(self, other): Checks if the square is not equal to
+            another square.
     """
 
     def __init__(self, size=0):
@@ -33,7 +37,7 @@ class Square():
             TypeError: If the size is not an integer.
             ValueError: If the size is less than 0.
         """
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -56,7 +60,7 @@ class Square():
             TypeError: If the size is not an integer.
             ValueError: If the size is less than 0.
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -97,7 +101,8 @@ class Square():
             other (Square): The other square to compare with.
 
         Returns:
-            bool: True if the square is less than the other square, False otherwise.
+            bool: True if the square is less than the other square,
+                    False otherwise.
         """
         return self.area() < other.area()
 
@@ -108,7 +113,8 @@ class Square():
             other (Square): The other square to compare with.
 
         Returns:
-            bool: True if the square is less than or equal to the other square, False otherwise.
+            bool: True if the square is less than or equal to the other square,
+                    False otherwise.
         """
         return self.area() <= other.area()
 
@@ -119,7 +125,8 @@ class Square():
             other (Square): The other square to compare with.
 
         Returns:
-            bool: True if the square is greater than the other square, False otherwise.
+            bool: True if the square is greater than the other square,
+                    False otherwise.
         """
         return self.area() > other.area()
 
@@ -130,7 +137,8 @@ class Square():
             other (Square): The other square to compare with.
 
         Returns:
-            bool: True if the square is greater than or equal to the other square, False otherwise.
+            bool: True if the square is greater than or equal to the other
+                    square, False otherwise.
         """
         return self.area() >= other.area()
 

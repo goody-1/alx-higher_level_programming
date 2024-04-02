@@ -22,7 +22,7 @@ class Square():
         Instantiation with integer size which is optional
         """
         # validating size instance attribute
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -30,11 +30,12 @@ class Square():
         self.__size = size
 
         # validating position instance attribute
-        if type(position) != tuple or len(position) != 2:
+        if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+
         for item in position:
             try:
-                if type(item) != int or item < 0:
+                if not isinstance(item, int) or item < 0:
                     raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:
@@ -53,7 +54,7 @@ class Square():
     def size(self, value):
         """Set square size
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -71,11 +72,11 @@ class Square():
         """Sets the position for the square to be printed
         """
         # validating position instance attribute
-        if type(value) != tuple or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         for item in value:
             try:
-                if type(item) != int or item < 0:
+                if not isinstance(item, int) or item < 0:
                     raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:

@@ -13,7 +13,8 @@ class Square():
         position (tuple): The position of the square when printed.
 
     Methods:
-        __init__(self, size=0, position=(0, 0)): Initializes a new Square instance.
+        __init__(self, size=0, position=(0, 0)): Initializes
+            a new Square instance.
         area(self): Calculates the area of the square.
         my_print(self): Prints the square.
 
@@ -24,15 +25,17 @@ class Square():
 
         Args:
             size (int): The size of the square. Defaults to 0.
-            position (tuple): The position of the square when printed. Defaults to (0, 0).
+            position (tuple): The position of the square when printed.
+                                Defaults to (0, 0).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
+            TypeError: If size is not an integer or position is not
+                        a tuple of 2 positive integers.
             ValueError: If size is less than 0.
 
         """
         # validating size instance attribute
-        if type(size) != int:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
@@ -40,11 +43,11 @@ class Square():
         self.__size = size
 
         # validating position instance attribute
-        if type(position) != tuple or len(position) != 2:
+        if not isinstance(position, tuple) or len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         for item in position:
             try:
-                if type(item) != int or item < 0:
+                if not isinstance(item, int) or item < 0:
                     raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:
@@ -70,7 +73,7 @@ class Square():
             ValueError: If value is less than 0.
 
         """
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -94,11 +97,11 @@ class Square():
 
         """
         # validating position instance attribute
-        if type(value) != tuple or len(value) != 2:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
         for item in value:
             try:
-                if type(item) != int or item < 0:
+                if not isinstance(item, int) or item < 0:
                     raise TypeError("position must be a tuple of 2 "
                                     "positive integers")
             except Exception:
