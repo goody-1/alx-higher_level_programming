@@ -4,7 +4,6 @@
 import math
 
 
-
 class MagicClass():
     """This is a class to test for byte code
 
