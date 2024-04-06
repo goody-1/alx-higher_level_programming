@@ -1,0 +1,56 @@
+The ``say_my_name`` module
+==========================
+
+Using ``say_my_name``
+-------------------------
+->	say_my_name(first_name, last_name="")
+
+first_name and last_name must be strings otherwise,
+    raise a TypeError exception with the message
+    first_name must be a string or last_name must be a string
+
+------------------------------
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> first_name = "Johnson"
+>>> last_name = "Goldlin"
+
+
+Basic Tests
+    >>> say_my_name(first_name)     # doctest: +REPORT_NDIFF +ELLIPSIS
+    My name is Johnson ...
+
+    >>> say_my_name(first_name, last_name)
+    My name is Johnson Goldlin
+
+Type errors:
+    >>> say_my_name(3)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name({"mat"}, [])
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(True, "James")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(first_name, 42.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(first_name, ("Talim",))
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    None:
+        >>> say_my_name()                       # doctest: +ELLIPSIS
+        Traceback (most recent call last):
+        ...
+        TypeError: ...
