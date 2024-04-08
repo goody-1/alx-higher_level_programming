@@ -89,8 +89,8 @@ class Rectangle:
         text = ""
 
         if self.__width != 0 and self.__height != 0:
-            text = f"{__symbol}" * self.__width + "\n" * (
-                self.__height - 1) + f"{__symbol}" * self.__width
+            text = (f"{__symbol}" * self.__width + "\n") * (
+                self.__height - 1) + (f"{__symbol}" * self.__width)
 
         return text
 
