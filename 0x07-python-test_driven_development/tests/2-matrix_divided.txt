@@ -87,11 +87,21 @@ Type errors:
         ...
         TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    None:
-        >>> mat_div()                       # doctest: +ELLIPSIS
+        >>> mat_div([[], [], []], 2.5)
         Traceback (most recent call last):
         ...
-        TypeError: ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Missing Parameters:
+		>>> mat_div([[1, 2], [2, 5]])        # doctest: +ELLIPSIS
+		Traceback (most recent call last):
+		...
+		TypeError: ...
+
+		>>> mat_div()                # doctest: +ELLIPSIS
+		Traceback (most recent call last):
+		...
+		TypeError: ...
 
     On size
         >>> mat_div([[2, 3, 32.5, 98], [21, 4, 5.8], [12, 5]], 4)
