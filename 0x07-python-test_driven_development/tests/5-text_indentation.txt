@@ -21,6 +21,7 @@ Using ``text_indentation``
 ... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
 ... beatiorem! Iam ruinas videres"""
 
+
 Basic Tests
     >>> text_indent(text)     # doctest: +REPORT_NDIFF +ELLIPSIS
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -49,7 +50,34 @@ Basic Tests
     <BLANKLINE>
     Quae animi affectio suum cuique tribuens atque hanc, quam dico.
     <BLANKLINE>
+    Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
+Another test:
+    >>> text = "Lorem ipsum, doren kurus jenen \
+    ... confirmed. Turus, bele? \
+    ... :ibum carum"
+    >>> text_indent(text)					# doctest: +REPORT_NDIFF
+    Lorem ipsum, doren kurus jenen confirmed.
+    <BLANKLINE>
+    Turus, bele?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ibum carum
+
+Test period:
+    >>> text = "Lorem ipsum, doren kurus jenen \
+    ... confirmed. Turus, bele? \
+    ... :ibum carum."
+    >>> text_indent(text)					# doctest: +REPORT_NDIFF
+    Lorem ipsum, doren kurus jenen confirmed.
+    <BLANKLINE>
+    Turus, bele?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+    ibum carum.
+    <BLANKLINE>
 
 Type errors:
     >>> text_indent(True)

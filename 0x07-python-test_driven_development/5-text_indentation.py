@@ -25,6 +25,9 @@ def text_indentation(text):
     count = 0
     tracker = 0
 
+    if text[-1] not in [".", "?", ":"]:
+        count += 1
+
     for i in text:
         if i in [".", "?", ":"]:
             count += 1
@@ -37,10 +40,13 @@ def text_indentation(text):
                 token += j
             else:
                 token += j + "\n\n"
-                token_list.append(token.strip())
+                token_list.append(token.strip(" "))
                 text = text[tracker:]
                 tracker = 0
                 break
 
+        if token[-3] not in [".", "?", ":"]:
+            token_list.append(token.strip())
+
     for i in token_list:
-        print(f"{i}\n")
+        print(f"{i}", end="")
