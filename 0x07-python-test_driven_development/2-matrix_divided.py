@@ -44,6 +44,6 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     try:
-      return [[round(i / div, 2) for i in row] for row in matrix]
+        return [[round(i / div, 2) for i in row] for row in matrix]
     except Exception as e:
-      raise e
+        raise e
