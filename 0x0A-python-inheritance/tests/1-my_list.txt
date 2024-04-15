@@ -1,0 +1,91 @@
+The ``1-my_list`` module
+=========================
+
+Using `MyList` class
+---------------------
+
+Importing the class from the module:
+    >>> MyList = __import__("1-my_list").MyList
+
+Checking for module docstring:
+    >>> module_doc = __import__("1-my_list").__doc__
+    >>> len(module_doc) > 1
+    True
+
+Checking for class docstring:
+    >>> class_doc = __import__("1-my_list").MyList.__doc__
+    >>> len(class_doc) > 1
+    True
+
+Checking for method docstring:
+    >>> method_doc = __import__("1-my_list").MyList.print_sorted.__doc__
+    >>> len(method_doc) > 1
+    True
+
+Checking that MyList inherits from list:
+    >>> issubclass(MyList, list)
+    True
+
+Checking for empty list:
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+Checking that appending works:
+    >>> l.append(2)
+    >>> l.append(3)
+    >>> l.append(1)
+    >>> l.append(10)
+    >>> l.append(5)
+    >>> print(l)
+    [2, 3, 1, 10, 5]
+
+Checking for sorted list:
+    >>> l.print_sorted()
+    [1, 2, 3, 5, 10]
+
+Checking for negative numbers:
+    >>> l.append(-30)
+    >>> l.append(-9)
+    >>> l.append(-1)
+    >>> print(l)
+    [2, 3, 1, 10, 5, -30, -9, -1]
+    >>> l.print_sorted()
+    [-30, -9, -1, 1, 2, 3, 5, 10]
+
+Checking for duplicate numbers:
+    >>> l.append(5)
+    >>> l.append(2)
+    >>> l.append(10)
+    >>> print(l)
+    [2, 3, 1, 10, 5, -30, -9, -1, 5, 2, 10]
+    >>> l.print_sorted()
+    [-30, -9, -1, 1, 2, 2, 3, 5, 5, 10, 10]
+
+Checking for empty list after removing elements:
+    >>> l.remove(2)
+    >>> l.remove(3)
+    >>> l.remove(1)
+    >>> l.remove(10)
+    >>> l.remove(5)
+    >>> print(l)
+    [-30, -9, -1, 5, 2, 10]
+    >>> l.print_sorted()
+    [-30, -9, -1, 2, 5, 10]
+
+Checking for sorting an empty list:
+    >>> l = MyList()
+    >>> l.print_sorted()
+    []
+
+Checking for sorting a list with a single element:
+    >>> l.append(5)
+    >>> l.print_sorted()
+    [5]
+
+Checking for sorting a list with repeated elements:
+    >>> l.append(5)
+    >>> l.append(5)
+    >>> l.append(5)
+    >>> l.print_sorted()
+    [5, 5, 5, 5]
